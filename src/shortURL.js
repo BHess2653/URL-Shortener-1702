@@ -1,10 +1,10 @@
 exports.short = (urlLink) => {
 
 var short = '';
-var randomText = 'abcdefghijlkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // text to loop through
+var randomText = 'abcdefghijlkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'; // text to loop through
 
 // for loop
-for(var i = 0; i < 5; i++){
+for(var i = 0; i < 8; i++){
 short =+ randomText.charAt(Math.floor(Math.random() * randomText.length));
 }
 
