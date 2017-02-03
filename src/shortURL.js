@@ -5,7 +5,7 @@ var randomText = 'abcdefghijlkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 
 // for loop
 for(var i = 0; i < 8; i++){
-short =+ randomText.charAt(Math.floor(Math.random() * randomText.length));
+short += randomText.charAt(Math.floor(Math.random() * randomText.length));
 }
 
 var myURL = 'http://sho.rt/';
