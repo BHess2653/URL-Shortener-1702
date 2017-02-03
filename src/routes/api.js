@@ -11,5 +11,9 @@ module.exports = (express) => {
     res.json({ Status: 'True' });
   });
 
+  router.get('/url', (req, res) => {
+    res.json(linkGen.short(req.body.urlLink));
+  });
+
   return router;
 };
