@@ -1,7 +1,7 @@
 {
   "name": "url-shortener-api",
   "version": "1.0.0",
-  "description": "Markdown Code",
+  "description": "Static API",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
