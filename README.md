@@ -14,3 +14,9 @@ To start the server with default settings run
 ```
 npm start
 ```
+
+## Routes
+
+| |  |  |
+| |  |  |
+| |  |  |
