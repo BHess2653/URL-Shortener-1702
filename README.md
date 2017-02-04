@@ -17,6 +17,8 @@ npm start
 
 ## Routes
 
-| |  |  |
-| |  |  |
-| |  |  |
+| Method | URL | Response |
+| --- | --- | --- |
+| GET | /api/v1/ | { "Hello": "World" } |
+| GET | /api/v1/status | { "Status": "true" } |
+| POST | /api/v1/url | [{ "origUrl": "http://www.google.com" }, { "shortUrl": "http://sho.rt/kReiLTTJ" }]|
