@@ -19,3 +19,13 @@ exports.one = (data, err, success) => {
     }],
   }).then(success).catch(err);
 };
+
+exports.update = (data, err, success) => {
+  db.url.find({
+    where: {
+      id: data.id,
+    },
+  }).then((existingData) => {
+    existingData.updateAttributes(data).then(success).catch(err);
+  }).catch(err);
+};
