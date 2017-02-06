@@ -29,3 +29,11 @@ exports.update = (data, err, success) => {
     existingData.updateAttributes(data).then(success).catch(err);
   }).catch(err);
 };
+
+exports.remove = (data, err, success) => {
+  db.url.destroy({
+    where: {
+      shortUrl: data.shortUrl,
+    },
+  }).then(success).catch(err);
+};
