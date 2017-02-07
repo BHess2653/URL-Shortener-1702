@@ -38,5 +38,29 @@ router.get('/urls/:id', (req,res) => {
     });
 });
 
+router.post('/urls/:id', (req,res) => {
+  const reqBody = req.body;
+  reqBody.id = req.params.id;
+    url.update(req.body,
+    (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data)
+    });
+});
+
+router.delete('/urls/:id', (req,res) => {
+  const reqBody = req.body;
+  reqBody.id = req.params.id;
+    url.remove(req.body,
+    (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data)
+    });
+});
+
 return router;
 };
