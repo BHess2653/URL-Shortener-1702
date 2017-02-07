@@ -37,3 +37,11 @@ exports.remove = (data, err, success) => {
     },
   }).then(success).catch(err);
 };
+
+exports.go = (data, err, success) => {
+  db.url.find({
+    where: {
+      shortUrl: data.shortUrl,
+    },
+  }).then(success).catch(err);
+};
