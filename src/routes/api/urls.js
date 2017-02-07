@@ -16,13 +16,25 @@ router.post('/urls', (req,res) => {
     });
 });
 
-router.get('urls', (req, res) => {
+router.get('/urls', (req, res) => {
   url.all(
     (err) => {
       res.status(500).json(err);
     },
     (data) => {
       res.status(200).json(data);
+    });
+});
+
+router.get('/urls/:id', (req,res) => {
+  const reqBody = req.body;
+  reqBody.id = req.params.id;
+    url.one(req.body,
+    (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data)
     });
 });
 
