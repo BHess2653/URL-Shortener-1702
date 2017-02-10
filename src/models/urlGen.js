@@ -8,5 +8,5 @@ exports.shortUrl = () => {
         shortUrl += randomText.charAt(Math.floor(Math.random() * randomText.length));
     }
 
-    return shortUrl
+    return 'http://sho.rt/' + shortUrl
 };
