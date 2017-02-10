@@ -50,3 +50,6 @@ Fri Feb 10 2017 02:24:53 GMT-0500 (EST)
 | POST | /api/v1/urls/:id | [{ "id": 2, "origUrl": "http://www.youtube.com", "shortUrl": "kReiLTTJ", "createdAt": "2017-02-10T03:32:57.000Z", "updatedAt": "2017-02-10T03:32:57.000Z" }] |
 | DELETE | /api/v1/urls/:id | [{ 1 }] |
 | GET | /go/:shortUrl | [{ "http://www.google.com" }] |
+
+### Style Guide reference
+[Airbnb](https://github.com/airbnb/javascript)
