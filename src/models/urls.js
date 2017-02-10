@@ -1,3 +1,4 @@
+const util = require('../../lib/util');
 const db = require('./db');
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -5,7 +6,7 @@ const db = require('./db');
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 exports.add = (data, err, success) => {
     db.url.create(data).then(success).catch(err);
-    console.log("Url was Added from Models");
+    util.debug("Url was Added from Models");
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -13,7 +14,7 @@ exports.add = (data, err, success) => {
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 exports.all = (err, success) => {
     db.url.findAll().then(success).catch(err);
-    console.log("Urls found from Models");
+    util.debug("Urls found from Models");
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -29,7 +30,7 @@ exports.one = (data, err, success) => {
             nested: true,
         }],
     }).then(success).catch(err);
-    console.log("Url found in Models");
+    util.debug("Url found in Models");
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -43,7 +44,7 @@ exports.update = (data, err, success) => {
     }).then((existingData) => {
         existingData.updateAttributes(data).then(success).catch(err);
     }).catch(err);
-    console.log("Url Updated from Models");
+    util.debug("Url Updated from Models");
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -55,7 +56,7 @@ exports.remove = (data, err, success) => {
             shortUrl: data.shortUrl,
         },
     }).then(success).catch(err);
-    console.log("Url Removed from Models");
+    util.debug("Url Removed from Models");
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -67,5 +68,5 @@ exports.go = (data, err, success) => {
             shortUrl: data.shortUrl,
         },
     }).then(success).catch(err);
-    console.log("shortUrl found in Models");
+    util.debug("shortUrl found in Models");
 };
