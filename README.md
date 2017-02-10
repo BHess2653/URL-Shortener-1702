@@ -1,11 +1,22 @@
 # URL Shortener
-This is a static url shortener using fake data.
+This is a simple dynamic url shortener.
 
 ## Installation
 
 Install all Dependencies
 ```
 npm install or npm i
+```
+
+## env
+create a .env file.
+```
+DB_NAME=databaseName
+DB_HOST=databaseUser
+DB_PORT=3306
+DB_USER=root
+DB_PASS=databasePass
+DB_SCHEMA=mysql
 ```
 
 ## Start the Server
