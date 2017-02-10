@@ -26,6 +26,18 @@ To start the server with default settings run
 npm start
 ```
 
+To start the server in DEBUG mode
+```
+DEBUG=true npm start
+```
+Output in DEBUG mode
+```
+=================================================
+Server active on port 3000
+Fri Feb 10 2017 02:24:53 GMT-0500 (EST)
+=================================================
+```
+
 ## Routes
 
 | Method | URL | Response |
