@@ -1,11 +1,22 @@
 # URL Shortener
-This is a static url shortener using fake data.
+This is a simple dynamic url shortener.
 
 ## Installation
 
 Install all Dependencies
 ```
 npm install or npm i
+```
+
+## env
+create a .env file.
+```
+DB_NAME=databaseName
+DB_HOST=databaseUser
+DB_PORT=3306
+DB_USER=root
+DB_PASS=databasePass
+DB_SCHEMA=mysql
 ```
 
 ## Start the Server
@@ -21,4 +32,9 @@ npm start
 | --- | --- | --- |
 | GET | /api/v1/ | { "Hello": "World" } |
 | GET | /api/v1/status | { "Status": "true" } |
-| POST | /api/v1/url | [{ "origUrl": "http://www.google.com" }, { "shortUrl": "http://sho.rt/kReiLTTJ" }]|
+| POST | /api/v1/urls | [{ "id": 2, "origUrl": "http://www.google.com", "shortUrl": "kReiLTTJ", "createdAt": "2017-02-10T03:32:57.000Z", "updatedAt": "2017-02-10T03:32:57.000Z" }]|
+| GET | /api/v1/urls | [{ "id": 1, "origUrl": "http://www.reddit.com", "shortUrl": "LgSdJMZj", "createdAt": "2017-02-10T03:32:57.000Z", "updatedAt": "2017-02-10T03:32:57.000Z" }] |
+| GET | /api/v1/urls/:id | [{ "id": 2, "origUrl": "http://www.google.com", "shortUrl": "kReiLTTJ", "createdAt": "2017-02-10T03:32:57.000Z", "updatedAt": "2017-02-10T03:32:57.000Z" }] |
+| POST | /api/v1/urls/:id | [{ "id": 2, "origUrl": "http://www.youtube.com", "shortUrl": "kReiLTTJ", "createdAt": "2017-02-10T03:32:57.000Z", "updatedAt": "2017-02-10T03:32:57.000Z" }] |
+| DELETE | /api/v1/urls/:id | [{ 1 }] |
+| GET | /go/:shortUrl | [{ "http://www.google.com" }] |

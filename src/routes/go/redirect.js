@@ -1,18 +1,19 @@
 const urls = require('../../models/urls');
 
 module.exports = (express) => {
-  const router = express.Router();
+    const router = express.Router();
 
-  router.get('/:shortUrl', (req, res) => {
-    req.body.shortUrl = req.params.shortUrl;
-    urls.go(req.body,
-    (err) => {
-      res.status(500).json(err);
-    },
-  (data) => {
-    res.redirect(data.origUrl);
-  });
-});
+    // Redirect router
+    router.get('/:shortUrl', (req, res) => {
+        req.body.shortUrl = req.params.shortUrl;
+        urls.go(req.body,
+            (err) => { // errorCallback
+                res.status(500).json(err);
+            },
+            (data) => { // successCallback
+                res.redirect(data.origUrl);
+            });
+    });
 
-  return router;
+    return router;
 };

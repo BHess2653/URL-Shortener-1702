@@ -1,16 +1,20 @@
 module.exports = (express) => {
-  var router = express.Router();
+    var router = express.Router();
 
-  router.get('/', (req, res) => {
-    res.json({ Hello: 'World' });
-  });
+    router.get('/', (req, res) => {
+        res.json({
+            Hello: 'World'
+        });
+    });
 
-  router.get('/status', (req, res) => {
-    res.json({ Status: 'True' });
-  });
+    router.get('/status', (req, res) => {
+        res.json({
+            Status: 'True'
+        });
+    });
 
-  router.use('/api/v1', require('./api/urls')(express));
-  router.use('/go/', require('./go/redirect')(express));
+    router.use('/api/v1', require('./api/urls')(express));
+    router.use('/go/', require('./go/redirect')(express));
 
-  return router;
+    return router;
 };
