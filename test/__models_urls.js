@@ -23,4 +23,15 @@ describe('Urls Model', () => {
       done();
     });
   });
+
+  // Get all Urls
+  it('Get all Urls', (done) => {
+    url.all((fail) => {
+      util.debug('Failed to get all Urls ', fail);
+    }, (urls) => {
+      this.fakeUrl = urls;
+      expect(this.fakeUrl.length).to.be.above(0);
+      done();
+    });
+  });
 });
