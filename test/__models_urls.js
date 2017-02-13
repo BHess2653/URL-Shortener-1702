@@ -11,7 +11,9 @@ describe('Urls Model', () => {
   let fakeId;
   let shortURL;
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Creates Url
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Create Url', (done) => {
     url.add(fakeUrl, (fail) => {
       util.debug('Failed to create fake Url');
@@ -24,7 +26,9 @@ describe('Urls Model', () => {
     });
   });
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Get all Urls
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Get all Urls', (done) => {
     url.all((fail) => {
       util.debug('Failed to get all Urls ', fail);
@@ -35,7 +39,9 @@ describe('Urls Model', () => {
     });
   });
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Get Url by id
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Create Url', (done) => {
     const fakeUrl = {
       id: fakeId,
@@ -48,7 +54,9 @@ describe('Urls Model', () => {
     });
   });
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Update Url
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Update Url', (done) => {
     fakeUrl = {
       id: fakeId,
@@ -63,7 +71,9 @@ describe('Urls Model', () => {
     });
   });
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Delete Url
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Delete Url', (done) => {
     url.remove(fakeUrl, (fail) => {
       util.debug('Failed to delete Url ', fail);
@@ -73,7 +83,9 @@ describe('Urls Model', () => {
     });
   });
 
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Redirect
+  // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Redirect', (done) => {
     const fakeUrl = {
       shortUrl: shortURL,
