@@ -10,4 +10,17 @@ describe('Urls Model', () => {
   };
   let fakeId;
   let shortUrl;
+
+  // Creates Url
+  it('Create Url', (done) => {
+    url.add(fakeUrl, (fail) => {
+      util.debug('Failed to create fake Url');
+    }, (url) => {
+      fakeId = url.id;
+      shortUrl = url.shortUrl;
+      expect(url.url).to.be.equal(fakeUrl.url);
+      expect(url.shortUrl).to.be.equal(fakeUrl.shortUrl);
+      done();
+    });
+  });
 });
