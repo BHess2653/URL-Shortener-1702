@@ -62,4 +62,14 @@ describe('Urls Model', () => {
       done();
     });
   });
+
+  // Delete Url
+  it('Delete Url', (done) => {
+    url.remove(fakeUrl, (fail) => {
+      util.debug('Failed to delete Url ', fail);
+    }, (res) => {
+      expect(res).to.be.equal(1);
+      done();
+    });
+  });
 });
