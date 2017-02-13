@@ -9,7 +9,7 @@ describe('Urls Model', () => {
     shortUrl: gen.shortUrl('http://www.google.com/'),
   };
   let fakeId;
-  let shortUrl;
+  let shortURL;
 
   // Creates Url
   it('Create Url', (done) => {
@@ -17,9 +17,9 @@ describe('Urls Model', () => {
       util.debug('Failed to create fake Url');
     }, (url) => {
       fakeId = url.id;
-      shortUrl = url.shortUrl;
+      shortURL = url.shortUrl;
       expect(url.url).to.be.equal(fakeUrl.url);
-      expect(url.shortUrl).to.be.equal(fakeUrl.shortUrl);
+      expect(url.shortUrl).to.be.equal(fakeUrl.shortURL);
       done();
     });
   });
@@ -69,6 +69,19 @@ describe('Urls Model', () => {
       util.debug('Failed to delete Url ', fail);
     }, (res) => {
       expect(res).to.be.equal(1);
+      done();
+    });
+  });
+
+  // Redirect
+  it('Redirect', (done) => {
+    const fakeUrl = {
+      shortUrl: shortURL,
+    };
+    url.go(fakeUrl, (fail) => {
+      util.debug('Failed to redirect ', fail);
+    }, (url) => {
+      expect(gen.shortUrl).to.be.equal(shortURL);
       done();
     });
   });
