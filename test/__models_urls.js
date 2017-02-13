@@ -47,4 +47,19 @@ describe('Urls Model', () => {
       done();
     });
   });
+
+  // Update Url
+  it('Update Url', (done) => {
+    fakeUrl = {
+      id: fakeId,
+      origUrl: 'http://www.reddit.com/',
+      shortUrl: gen.shortUrl('http://www.reddit.com/'),
+    };
+    url.update(fakeUrl, (fail) => {
+      util.debug('Failed to update fake Url ', fail);
+    }, (url) => {
+      expect(url.dataValues.url).to.be.equal(fakeUrl.url);
+      done();
+    });
+  });
 });
