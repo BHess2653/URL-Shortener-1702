@@ -34,4 +34,17 @@ describe('Urls Model', () => {
       done();
     });
   });
+
+  // Get Url by id
+  it('Create Url', (done) => {
+    const fakeUrl = {
+      id: fakeId,
+    };
+    url.one(fakeUrl, (fail) => {
+      util.debug('Failed to get Url by id ', fail);
+    }, (url) => {
+      expect(url.id).to.be.equal(fakeId);
+      done();
+    });
+  });
 });
