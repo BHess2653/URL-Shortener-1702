@@ -1,5 +1,5 @@
 # URL Shortener
-This is a simple dynamic url shortener.
+This is a simple url shortener.
 
 ## Installation
 
@@ -36,6 +36,17 @@ Output in DEBUG mode
 Server active on port 3000
 Fri Feb 10 2017 02:24:53 GMT-0500 (EST)
 =================================================
+```
+
+## Run unit tests
+
+To run unit tests
+```
+npm test
+```
+To run unit tests in DEBUG mode
+```
+DEBUG=true npm test
 ```
 
 ## Routes
