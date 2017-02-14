@@ -21,7 +21,7 @@ describe('Urls Model', () => {
       fakeId = url.id;
       shortURL = url.shortUrl;
       expect(url.url).to.be.equal(fakeUrl.url);
-      expect(url.shortUrl).to.be.equal(fakeUrl.shortURL);
+      expect(url.shortURL).to.be.equal(fakeUrl.shortURL);
       done();
     });
   });
