@@ -42,7 +42,7 @@ describe('Urls Model', () => {
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   // Get Url by id
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-  it('Create Url', (done) => {
+  it('Get Url by id', (done) => {
     const fakeUrl = {
       id: fakeId,
     };
