@@ -16,7 +16,7 @@ describe('Urls Model', () => {
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Create Url', (done) => {
     url.add(fakeUrl, (fail) => {
-      utool.debug('Failed to create fake Url');
+      utool.debug('Failed to ' + 'create'.create + ' fake Url');
     }, (url) => {
       fakeId = url.id;
       shortURL = url.shortUrl;
@@ -31,7 +31,7 @@ describe('Urls Model', () => {
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Get all Urls', (done) => {
     url.all((fail) => {
-      utool.debug('Failed to get all Urls ', fail);
+      utool.debug('Failed to ' + 'get'.read + ' all Urls ', fail);
     }, (urls) => {
       this.fakeUrl = urls;
       expect(this.fakeUrl.length).to.be.above(0);
@@ -47,7 +47,7 @@ describe('Urls Model', () => {
       id: fakeId,
     };
     url.one(fakeUrl, (fail) => {
-      utool.debug('Failed to get Url by id ', fail);
+      utool.debug('Failed to ' + 'get'.read + ' Url by id ', fail);
     }, (url) => {
       expect(url.id).to.be.equal(fakeId);
       done();
@@ -64,7 +64,7 @@ describe('Urls Model', () => {
       shortUrl: gen.shortUrl('http://www.reddit.com/'),
     };
     url.update(fakeUrl, (fail) => {
-      utool.debug('Failed to update fake Url ', fail);
+      utool.debug('Failed to ' + 'update'.update + ' fake Url ', fail);
     }, (url) => {
       expect(url.dataValues.url).to.be.equal(fakeUrl.url);
       done();
@@ -76,7 +76,7 @@ describe('Urls Model', () => {
   // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Delete Url', (done) => {
     url.remove(fakeUrl, (fail) => {
-      utool.debug('Failed to delete Url ', fail);
+      utool.debug('Failed to ' + 'delete'.delete + ' Url ', fail);
     }, (res) => {
       expect(res).to.be.equal(1);
       done();
