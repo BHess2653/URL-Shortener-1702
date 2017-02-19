@@ -1,4 +1,4 @@
-const util = require('../../lib/util');
+const utool = require('utiltool');
 const db = require('./db');
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -6,7 +6,7 @@ const db = require('./db');
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 exports.add = (data, err, success) => {
   db.url.create(data).then(success).catch(err);
-  util.debug('Url was Added from Models ', data);
+  utool.debug('Url was Added from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -14,7 +14,7 @@ exports.add = (data, err, success) => {
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 exports.all = (err, success) => {
   db.url.findAll().then(success).catch(err);
-  util.debug('Urls found from Models ');
+  utool.debug('Urls found from Models ');
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -30,7 +30,7 @@ exports.one = (data, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  util.debug('Url found in Models ', data);
+  utool.debug('Url found in Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -44,7 +44,7 @@ exports.update = (data, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(data).then(success).catch(err);
   }).catch(err);
-  util.debug('Url Updated from Models ', data);
+  utool.debug('Url Updated from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -56,7 +56,7 @@ exports.remove = (data, err, success) => {
       shortUrl: data.shortUrl,
     },
   }).then(success).catch(err);
-  util.debug('Url Removed from Models ', data);
+  utool.debug('Url Removed from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -68,5 +68,5 @@ exports.go = (data, err, success) => {
       shortUrl: data.shortUrl,
     },
   }).then(success).catch(err);
-  util.debug('shortUrl found in Models ', data);
+  utool.debug('shortUrl found in Models ', data);
 };
