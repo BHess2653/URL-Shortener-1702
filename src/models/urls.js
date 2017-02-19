@@ -6,7 +6,7 @@ const db = require('./db');
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 exports.add = (data, err, success) => {
   db.url.create(data).then(success).catch(err);
-  utool.debug('Url was Added from Models ', data);
+  utool.debug('Url was ' + 'Added'.create + ' from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -30,7 +30,7 @@ exports.one = (data, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  utool.debug('Url found in Models ', data);
+  utool.debug('Url ' + 'found'.read + ' in Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -44,7 +44,7 @@ exports.update = (data, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(data).then(success).catch(err);
   }).catch(err);
-  utool.debug('Url Updated from Models ', data);
+  utool.debug('Url ' + 'Updated'.update + ' from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -56,7 +56,7 @@ exports.remove = (data, err, success) => {
       shortUrl: data.shortUrl,
     },
   }).then(success).catch(err);
-  utool.debug('Url Removed from Models ', data);
+  utool.debug('Url ' + 'Removed'.delete + ' from Models ', data);
 };
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -68,5 +68,5 @@ exports.go = (data, err, success) => {
       shortUrl: data.shortUrl,
     },
   }).then(success).catch(err);
-  utool.debug('shortUrl found in Models ', data);
+  utool.debug('shortUrl ' + 'found'.read + ' in Models ', data);
 };
