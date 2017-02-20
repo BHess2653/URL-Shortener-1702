@@ -1,3 +1,4 @@
+[ ![Codeship Status for BHess2653/URL-Shortener-1702](https://app.codeship.com/projects/53272510-d937-0134-21e1-72ea577329ac/status?branch=master)](https://app.codeship.com/projects/203310)
 # URL Shortener
 This is a simple url shortener.
 
@@ -47,6 +48,52 @@ npm test
 To run unit tests in DEBUG mode
 ```
 DEBUG=true npm test
+```
+
+## Work Flow
+Create a feature branch
+```
+git checkout -b branchName
+```
+add all
+```
+git add all
+```
+commit all
+```
+git commit -m 'whatever you did'
+```
+push changes
+```
+git push origin feature branch
+```
+test branch
+```
+mocha
+```
+checkout master branch
+```
+git checkout origin master
+```
+pull feature branch to master
+```
+git pull origin feature branch
+```
+push master
+```
+git push origin master
+```
+checkout release branch
+```
+git checkout origin release
+```
+pull from master to release
+```
+git pull origin master
+```
+push to release
+```
+git push origin release
 ```
 
 ## Routes
